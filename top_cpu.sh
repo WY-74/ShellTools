@@ -10,7 +10,7 @@ mkdir -p "$WORKPATH"
 rm -rf "$WORKPATH"/*
 
 function save_and_count(){
-    top -p $1 -b -n 10 -d 1 > "$WORKPATH/info.txt"
+    top -p $1 -b -n 120 -d 1 > "$WORKPATH/info.txt"
 
     for arg in "${PROCESS_NAMES[@]}"
     do
