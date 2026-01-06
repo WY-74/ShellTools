@@ -10,18 +10,18 @@ class CpuInfo:
     avg: float = 0.0
 
 
-num = 1
+num_pids = 1
 skip_rows = 5
 
-with open("cpus.txt") as f:
+with open("data/process.txt") as f:
     data = f.read()
 data = [line for line in data.splitlines() if line.strip()]
 
 i = 0
 valid_rows = []
 while i < len(data):
-    valid_rows += data[i + skip_rows : i + skip_rows + num]
-    i += skip_rows + num
+    valid_rows += data[i + skip_rows : i + skip_rows + num_pids]
+    i += skip_rows + num_pids
 
 _map = {}
 for row in valid_rows:
